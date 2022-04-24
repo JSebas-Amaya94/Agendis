@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/Form.css";
 import { firebase } from "../firebase";
 
@@ -75,7 +75,7 @@ const Form = () => {
         webSiteCliente: webLink,
       };
 
-      const data = await db.collection("agendis").add(nuevoContacto);
+      await db.collection("agendis").add(nuevoContacto);
 
       setListaContactos([
         ...listaContactos,
