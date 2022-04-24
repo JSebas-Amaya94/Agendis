@@ -24,7 +24,7 @@ const Form = () => {
         const db = firebase.firestore();
         const data = await db.collection("agendis").get();
         const arrayData = data.docs.map((item) => ({
-          id: item.id,
+          id:item.id,
           ...item.data(),
         }));
         setListaContactos(arrayData);
